@@ -1,0 +1,70 @@
+.ourSuccess {
+  margin: 130px 196px;
+  display: flex;
+  flex-direction: column;
+  gap: 95px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  width: 750px;
+  height: 136px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+
+  h2 {
+    font-family: "Buenos Aires Trial", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 130%;
+    color: #010514;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Buenos Aires Trial", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: #010514;
+    opacity: 0.85;
+    margin: 0;
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 95px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.value {
+  font-family: "Buenos Aires Trial", sans-serif;
+  font-weight: 300;
+  font-size: 96px;
+  line-height: 100%;
+
+  background: linear-gradient(90deg, #136cb5 0%, #49bbbd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.label {
+  font-family: "Buenos Aires Trial", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 130%;
+  color: rgba(1, 5, 20, 0.8);
+}

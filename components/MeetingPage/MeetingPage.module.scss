@@ -1,0 +1,425 @@
+$bg-app: #eef5fa;
+$bg-card: #ffffff;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$color-teal: #49BBBD;
+$color-teal-light: #e6fffa;
+$color-red: #fc8181;
+$border-color: #e2e8f0;
+$border-accent: #49BBBD;
+$radius-lg: 24px;
+$radius-md: 12px;
+$radius-sm: 8px;
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+.appSection {
+    background-color: #EBF3F9;
+    width: 100%;
+}
+
+.appContainer {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 100px 120px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: $text-primary;
+}
+
+.textTeal {
+    color: $color-teal;
+}
+
+.mainGrid {
+    display: grid;
+    gap: 24px;
+    align-items: stretch;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 500px;
+    }
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.headerSection {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    .headerBackBtn {
+        background-color: $color-teal;
+        min-width: 50px;
+        height: 50px;
+        border-radius: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        border: 1px solid #FFFFFF;
+        margin-left: 17px;
+
+    }
+
+}
+
+.videoTitleHeader {
+    width: 100%;
+    background: $bg-card;
+    padding: 35px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+
+
+    .headerContent {
+        flex: 1;
+
+        h1 {
+            margin: 0 0 11px 0;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 100%;
+            letter-spacing: 0%;
+        }
+
+        p {
+            color: $text-secondary;
+            margin: 0;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 100%;
+            letter-spacing: 2%;
+        }
+    }
+
+    .headerSettingsBtn {
+        background: none;
+        border: none;
+        color: $text-secondary;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+}
+
+.videoWrapper {
+    position: relative;
+    background-color: #333;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    flex: 1;
+    min-height: 480px;
+    box-shadow: $shadow-md;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        min-height: 380px;
+    }
+
+    .mainVideoFeed {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.participantsOverlay {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    .participantCard {
+        border-radius: $radius-md;
+        overflow: hidden;
+        border: 4px solid white;
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.videoControlsContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    z-index: 20;
+
+    .videoControls {
+        background: #EBF3F9;
+        backdrop-filter: blur(8px);
+        width: 100%;
+        padding: 12px;
+        border-radius: $radius-lg;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        img {
+            padding: 10px;
+            background-color: #FFFFFF;
+            border-radius: 13px;
+        }
+    }
+}
+
+.iconButton {
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: $color-teal;
+    cursor: pointer;
+    box-shadow: $shadow-sm;
+    transition: all 0.2s;
+
+    &.filled {
+        background-color: $color-teal-light;
+    }
+
+    &.danger {
+        background-color: $color-red;
+        color: white;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: $bg-card;
+    border-radius: $radius-lg;
+    padding: 40px 30px;
+    box-shadow: $shadow-sm;
+    display: flex;
+    flex-direction: column;
+
+    &.booksCard {
+        flex: 0;
+        padding: 50px 30px;
+
+        .booksCardHeader {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            align-items: center;
+
+            .sectionTitle {
+                margin: 0;
+                font-weight: 600;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.sectionTitle {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.progressContainer {
+    margin-bottom: 20px;
+
+    .progressHeader {
+        display: flex;
+        justify-content: space-between;
+        color: $color-teal;
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 180%;
+        letter-spacing: 2%;
+    }
+
+    .progressSegments {
+        display: flex;
+        gap: 3px;
+        height: 5px;
+
+        .progressSegment {
+            flex: 1;
+            background: #49BBBD4D;
+            border-radius: 3px;
+
+            &.active {
+                background: $color-teal;
+            }
+        }
+    }
+}
+
+.scrollableContent {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 4px;
+
+    .accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+}
+
+.accordionItem {
+    border: 1px solid #49BBBD4D;
+    border-radius: 19px;
+
+    .accordionHeader {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .accordionTitle {
+        margin-bottom: 5px;
+        text-align: left;
+        color: #252641;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+
+        &.active {
+            color: $color-teal;
+        }
+
+    }
+
+    .accordionMeta {
+        display: flex;
+        gap: 12px;
+        font-size: 0.75rem;
+        color: $text-secondary;
+
+        .metaItem {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+}
+
+.lessonList {
+    list-style: none;
+    padding: 12px;
+
+    .lessonItem {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px;
+        border-radius: $radius-sm;
+        font-size: 0.85rem;
+        color: $text-secondary;
+        border-bottom: 1px solid #D9D9D9;
+
+        &.active {
+            color: $color-teal;
+            font-weight: 600;
+        }
+
+        .lessonMeta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    }
+}
+
+.booksGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.bookCard {
+    background: white;
+    border: 1px solid $border-accent;
+    border-radius: $radius-md;
+    overflow: hidden;
+    padding: 14px 10px;
+
+    .bookImage {
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    .bookInfo {
+        padding: 10px;
+        text-align: center;
+
+        .bookTitle {
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+
+        }
+
+        .bookPrice {
+            color: $color-teal;
+            font-weight: 700;
+            font-weight: 600;
+            font-size: 30px;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+$bg-light-blue: #F1F8FF;
+$text-dark-blue: #2F327D;
+$text-grey: #696984;
+$color-accent: #49BBBD;
+$color-link-blue: #00A8FF;
+$text-black: #000000;
+$font-family: 'Poppins', sans-serif;
+
+.heroSection {
+  background-color: $bg-light-blue;
+  font-family: $font-family;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 70px 120px;
+  max-width: 1920px;
+
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+    gap: 50px;
+    text-align: center;
+  }
+}
+
+.contentColumn {
+  flex: 1;
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.metaInfo {
+  color: $text-black;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  .categoryLink {
+    color: $color-accent;
+    text-decoration: none;
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.title {
+  color: $text-dark-blue;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  max-width: 670px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.description {
+  color: $text-grey;
+  margin-bottom: 25px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 2%;
+}
+
+.ctaButton {
+  background-color: $color-accent;
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba($color-accent, 0.3);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  &:hover {
+    background-color: darken($color-accent, 5%);
+    transform: translateY(-2px);
+  }
+}
+
+.imageColumn {
+  flex: 1.1;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 992px) {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .heroImage {
+    height: auto;
+    border-radius: 20px;
+  }
+}

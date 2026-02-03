@@ -1,0 +1,144 @@
+.blogWrapper {
+    width: 100%;
+
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 652px;
+    overflow: hidden;
+    border-radius: 4px;
+
+    .featuredImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.contentSection {
+    padding: 80px 10%;
+    max-width: 1920px;
+
+    @media (max-width: 768px) {
+        padding: 40px 5%;
+    }
+}
+
+.blogTitle {
+    color: #2F327D;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 180%;
+    letter-spacing: 0%;
+
+
+    @media (max-width: 640px) {
+        font-size: 28px;
+    }
+}
+
+.textContent {
+    p {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 180%;
+        color: #696984;
+        margin-bottom: 30px;
+        letter-spacing: 0.02em;
+    }
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+
+    .tag {
+        background-color: #49BBBD1A;
+        color: #696984;
+        padding: 13px 26px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+
+        &:hover {
+            background-color: #49BBBD;
+            color: #ffffff;
+        }
+    }
+}
+
+.divider {
+    border: none;
+    border-top: 0.5px solid #696984;
+    margin: 40px 0;
+}
+
+.authorSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .authorInfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 6px;
+            object-fit: inherit;
+            background-color: #D9D9D9;
+        }
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+
+            .writtenBy {
+                color: #696984;
+                font-weight: 500;
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+
+            .authorName {
+                color: #000000;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 100%;
+                letter-spacing: 2%;
+            }
+        }
+    }
+
+    .followBtn {
+        background: transparent;
+        color: #49BBBD;
+        border: 1px solid #49BBBD;
+        padding: 12px 88px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        font-size: 16px;
+
+        &:hover {
+            background: #49BBBD;
+            color: #ffffff;
+        }
+    }
+}

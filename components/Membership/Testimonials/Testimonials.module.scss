@@ -1,0 +1,160 @@
+$navy-light: #9DCCFF;
+$dark-blue: #2D3436;
+$teal-accent: #49BBBD;
+$text-gray: #696984;
+$white: #ffffff;
+
+$visible-cards: 4;
+
+.testimonialSection {
+  background-color: $navy-light;
+  padding: 80px 0 317px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 120px;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    padding: 0 60px;
+  }
+}
+
+.title {
+  color: $dark-blue;
+  margin-bottom: 60px;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.viewPort {
+  width: 100%;
+  overflow: hidden; 
+}
+
+.cardTrack {
+  display: flex;
+  gap: 30px; 
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.card {
+  flex: 0 0 calc((100% / #{$visible-cards}) - (30px * (#{$visible-cards} - 1) / #{$visible-cards}));
+  width: 384px;
+  height: 395px;
+  background: $white;
+  border-radius: 20px;
+  padding: 35px 28px 60px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 1024px) {
+    flex: 0 0 calc(50% - 15px); 
+  }
+
+  @media (max-width: 600px) {
+    flex: 0 0 100%; 
+  }
+}
+
+.imageContainer {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f0;
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+  }
+}
+
+.studentName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2D2E4F;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.testimonialText {
+  color: $text-gray;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  text-align: center;
+
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: $teal-accent;
+  color: $white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &.prev {
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  &.next {
+    left: 100%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 1440px) {
+    &.prev {
+      left: 0;
+
+      transform: translateX(-50%);
+    }
+
+    &.next {
+      right: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    display: none; 
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,247 @@
+$bg-light: #eef5fa;
+$bg-white: #ffffff;
+$text-dark: #1a1a1a;
+$text-secondary: #2d3748;
+$text-muted: #4a5568;
+$text-light: #696984;
+$accent-teal: #62c1cf;
+$border-light: #edf2f7;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-light;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 0 120px;
+  max-width: 1920px;
+
+}
+
+.heading {
+  width: 100%;
+
+  h1 {
+    margin: 70px 0;
+    color: $text-dark;
+    width: 100%;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 2%;
+  }
+
+
+}
+
+.card {
+  background: $bg-white;
+  border-radius: 40px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 80px 61px 34px 106px;
+  gap: 113px;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-bottom: 80px;
+
+  @media (max-width: 1024px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 20px;
+  }
+}
+
+.imageSection {
+  position: relative;
+  flex-shrink: 0;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (max-width: 850px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    width: 240px;
+    height: 240px;
+  }
+
+  .mainImageWrapper {
+    overflow: hidden;
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+      width: 260px;
+      height: 260px;
+    }
+
+    @media (max-width: 480px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    .mainImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .decorator {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.7;
+
+    &.dec1 {
+      width: 80px;
+      height: 80px;
+      background: #f4ffb0;
+      top: 10px;
+      right: 20px;
+    }
+
+    &.dec2 {
+      width: 120px;
+      height: 120px;
+      background: #c1f7e5;
+      bottom: -10px;
+      left: -20px;
+    }
+
+    &.dec3 {
+      width: 90px;
+      height: 90px;
+      background: #fed8b1;
+      bottom: 20px;
+      right: -10px;
+    }
+  }
+}
+
+.contentSection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 850px) {
+    align-items: center;
+  }
+
+  .name {
+    margin: 0 0 31px 0;
+    color: #252641;
+    font-weight: 700;
+    font-size: 30px;
+
+    @media (max-width: 480px) {
+      font-size: 22px;
+    }
+  }
+
+  .email {
+    color: #252641;
+    margin: 0 0 19px 0;
+    font-weight: 500;
+    font-size: 24px;
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+
+  .testimonialText {
+    color: $text-light;
+    margin: 0;
+    margin-bottom: 30px;
+    max-width: 500px;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    line-height: 180%;
+    letter-spacing: 2%;
+
+    @media (max-width: 850px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 15px;
+
+    .socialIcon {
+      width: 32px;
+      height: 32px;
+      background: $accent-teal;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $bg-white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 20px;
+
+  @media (max-width: 850px) {
+    flex-direction: row;
+    border-left: none;
+    padding-left: 0;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .thumbBtn {
+    border: none;
+    background: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    transition: border-color 0.2s ease;
+
+    &.active {
+      border-color: $text-secondary;
+    }
+
+    .thumbImg {
+      object-fit: cover;
+    }
+  }
+}

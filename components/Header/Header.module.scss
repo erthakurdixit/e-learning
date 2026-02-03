@@ -1,0 +1,214 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.header {
+    position: relative;
+    z-index: $z-header;
+}
+
+.container {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 30px 120px;
+    max-width: 1920px;
+    margin: 0 auto
+}
+
+.logo {
+    @include flex-center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.logoIcon {
+    width: 60px;
+    height: 60px;
+    border: 2px solid $color-accent;
+    border-radius: $radius-sm;
+    transform: rotate(45deg);
+}
+
+.logoText {
+    width: 114px;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: $color-white;
+
+    transform: translateX(-60px);
+
+    &.whiteBg {
+        color: $color-black;
+    }
+
+}
+
+.whiteBg {
+    color: $color-black;
+}
+
+.rightSection {
+    @include flex-center;
+    gap: 80px;
+}
+
+.navList {
+    @include flex-center;
+    gap: 80px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 33px;
+
+    @media (max-width: 1600px) {
+        gap: 30px;
+    }
+}
+
+.navLink {
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: $color-white;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    padding: 5px;
+
+    &:hover {
+        &:hover {
+            background: #49BBBD;
+            color: #ffffff;
+        }
+    }
+
+    &.whiteBg {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 100%;
+        letter-spacing: 2%;
+        color: #5B5B5B;
+    }
+
+    &:focus-visible {
+        @include focus-ring;
+    }
+}
+
+.actions {
+    font-family: Poppins, sans-serif;
+    @include flex-center;
+    width: 346px;
+    height: 61px;
+    border-radius: 80px;
+    opacity: 1;
+    gap: 28px;
+
+    &.hasUser {
+        width: auto;
+        background: transparent;
+        box-shadow: none;
+        gap: 20px;
+    }
+    
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    color: $color-white; 
+
+    &.whiteBg {
+        color: $color-black;
+    }
+}
+
+.avatarWrapper {
+    width: 63px;
+    height: 63px;
+    border-radius: 60%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.avatarImage {
+    object-fit: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.userName {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+    color: #000000;
+}
+
+.chevron {
+    margin-left: 5px;
+    transform: translateY(1px);
+    color: #000000;
+}
+
+.login {
+    @include flex-center;
+    justify-content: center;
+    width: 160px;
+    height: 60px;
+    border-radius: 80px;
+    box-shadow: 0px 20px 24px 0px #00000008;
+    opacity: 1;
+
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: $color-login;
+    background-color: $color-white;
+    text-decoration: none;
+
+    &:focus-visible {
+        @include focus-ring;
+    }
+}
+
+.signup {
+    @include flex-center;
+    justify-content: center;
+    width: 160px;
+    height: 60px;
+    background: #FFFFFF4D;
+    border-radius: 80px;
+    box-shadow: 0px 20px 24px 0px #00000008;
+    opacity: 1;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+    &:focus-visible {
+        @include focus-ring;
+    }
+}
+
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+    }
+}

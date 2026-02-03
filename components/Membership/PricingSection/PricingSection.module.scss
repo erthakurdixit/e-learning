@@ -1,0 +1,50 @@
+$teal: #49BBBD;
+$dark-text: #111827;
+
+.pricingSection {
+    margin-top: 95px;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 0;
+    color: $teal;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: baseline;
+    justify-items: center;
+    padding: 0 120px;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    @media (min-width: 1600px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 0 375px;
+    }
+
+
+}

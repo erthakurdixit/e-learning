@@ -1,0 +1,39 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+.landingPageBanner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1912 / 1118;
+  background: #49BBBD;
+  overflow: hidden;
+  clip-path: ellipse(95% 100% at 50% 0%);
+  max-height: 1100px;
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 240px 120px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .landingBannerContainer {
+    max-width: 1920px;
+    position: relative;
+    margin: 0 auto;
+
+  }
+
+  .girlImage {
+    position: absolute;
+    top: 224px;
+    right: 280px;
+    width: 544px;
+    height: 892px;
+    z-index: 1;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,72 @@
+@use '../../styles/variables.scss';
+
+$teal-accent: #49BBBD;
+$dark-blue-bg: #252641;
+$text-dark: #333333;
+$text-grey: #696984;
+$input-border: #BDBDD3;
+$white: #ffffff;
+$border-radius-pill: 50px;
+$border-radius-card: 30px;
+$font-family: 'Poppins', sans-serif;
+
+.splitLayout {
+  display: flex;
+  font-family: $font-family;
+  padding: 40px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.imageSide {
+  flex: 1;
+  position: relative;
+  @media (max-width: 900px) {
+    min-height: 300px;
+    flex: none;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  .bgImage {
+    border-radius: 29px;
+    object-fit: cover;
+    width: 100%;
+
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    color: $white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    .overlayTitle {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .overlaySubtitle {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.formSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+}
+
+.formWrapper {
+  width: 100%;
+  padding: 100px
+}

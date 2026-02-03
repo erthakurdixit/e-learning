@@ -1,0 +1,140 @@
+$primary-text: #252641;
+$secondary-text: #696984;
+$accent-color: #49BBBD;
+$bg-white: #ffffff;
+$radius: 20px;
+
+.card {
+    background-color: $bg-white;
+    border-radius: $radius;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .cardImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.metaRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: $secondary-text;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 180%;
+    letter-spacing: 2%;
+
+    .metaItem {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+            margin-top: -1px;
+        }
+    }
+}
+
+.title {
+    color: $primary-text;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.description {
+    color: $secondary-text;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 2%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba($secondary-text, 0.1);
+    padding-top: 20px;
+}
+
+.authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: inherit;
+    }
+
+    .authorName {
+        color: $primary-text;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 2%;
+    }
+}
+
+.pricing {
+    font-family: 'Poppins', sans-serif;
+
+    .oldPrice {
+        color:  #00000080;
+        margin-right: 10px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 2%;
+        vertical-align: middle;
+        text-decoration: line-through;
+    }
+
+    .newPrice {
+        color: $accent-color;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 2%;
+        vertical-align: middle;
+    }
+}

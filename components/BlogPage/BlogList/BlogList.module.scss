@@ -1,0 +1,84 @@
+$bg-color: #F1F3F5;
+$text-color: #000000CC;
+$font-family: 'Poppins', sans-serif;
+$card-radius: 20px;
+$label-radius: 12px;
+$white-translucent: #FFFFFFB2;
+
+.blogListSection {
+    padding: 60px 20px;
+    font-family: $font-family;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+.sectionTitle {
+    color: $text-color;
+    margin-bottom: 26px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    position: relative;
+    height: 280px;
+    border-radius: $card-radius;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.labelWrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white-translucent;
+    padding: 16px 0;
+    text-align: center;
+    border-radius: $label-radius;
+
+}
+
+.labelText {
+    padding: 16px 80px;
+    color: $text-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}

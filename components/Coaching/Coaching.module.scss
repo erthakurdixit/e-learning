@@ -1,0 +1,95 @@
+$navy-bg: #252641;
+$border-color: #0085FF;
+$teal-accent: #49BBBD;
+$white: #ffffff;
+$font-family: 'Poppins', sans-serif;
+
+.ctaWrapper {
+  padding: 100px 120px;
+  max-width: 1920px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  background-color: $navy-bg;
+  border: 2px solid $border-color;
+  border-radius: 37px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+    border-radius: 25px;
+  }
+}
+
+.content {
+  max-width: 1259px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+
+  margin: 70px 0 30px 0;
+  color: $white;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.description {
+  color: rgba($white, 0.8);
+  margin-bottom: 73px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 180%;
+  letter-spacing: 2%;
+  text-align: center;
+
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  background-color: $teal-accent;
+  color: $white;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 83px;
+
+  &:hover {
+    background-color: darken($teal-accent, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

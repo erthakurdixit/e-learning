@@ -1,0 +1,162 @@
+.wrapper {
+    margin: 120px aut0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.header {
+    text-align: center;
+}
+
+.heading {
+    color: #2F327D;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 180%;
+    letter-spacing: 0%;
+
+    span {
+        color: #00cbb8;
+    }
+}
+
+.subheading {
+    color: #696984;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 180%;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.features {
+    max-width: 1580px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 160px;
+}
+
+.featureRow {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.reverse {
+    grid-template-columns: 1fr 1.1fr;
+
+    .media {
+        order: 2;
+    }
+
+    .content {
+        order: 1;
+    }
+}
+
+.media {
+    position: relative;
+
+    img {
+        width: 100%;
+        max-height: 611px;
+        display: block;
+    }
+}
+
+.content {
+    max-width: 542px;
+
+    h3 {
+        color: #2F327D;
+        margin-bottom: 50px;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 160%;
+        letter-spacing: 0%;
+
+        span {
+            color: #00cbb8;
+        }
+
+    }
+
+    p {
+        color: #696984;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 180%;
+        letter-spacing: 2px;
+    }
+
+    ul {
+        padding-left: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        li {
+            color: #696984;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 180%;
+            letter-spacing: 2px;
+            list-style-type: none;
+        }
+    }
+}
+
+.cta {
+    text-align: center;
+    margin-top: 50px;
+    button {
+        background: transparent;
+        color: #00cbb8;
+        border: 1px solid #00cbb8;
+        padding: 14px 32px;
+        border-radius: 999px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: #00cbb8;
+            color: #000;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .featureRow,
+    .reverse {
+        grid-template-columns: 1fr;
+        gap: 48px;
+
+        .media,
+        .content {
+            order: unset;
+            text-align: center;
+        }
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 36px;
+    }
+}
