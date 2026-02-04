@@ -16,7 +16,7 @@ const LandingPageBanner = () => {
                 <Image src={notifications} alt="notifications" width={911} height={577} />
                 </div>
             </div>
-            <Image src={girlImage} alt="girl image" className={styles.girlImage} />
+            <Image src={girlImage} alt="girl image" className={styles.girlImage} width={544} height={892} />
         </div>
     </div >;
 };

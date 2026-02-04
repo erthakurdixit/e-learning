@@ -1,24 +1,31 @@
+@use "../../../styles/variables.scss" as *;
+
 .wrapper {
-    margin: 120px aut0;
+    margin: 60px auto;
+    padding: 0 20px;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 60px;
+
+    @media (min-width: 992px) {
+        margin: 120px auto;
+        gap: 100px;
+    }
 }
 
 .header {
     text-align: center;
+    max-width: 800px;
 }
 
 .heading {
     color: #2F327D;
     margin: 0;
-    padding: 0;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 180%;
-    letter-spacing: 0%;
+    font-size: clamp(28px, 5vw, 36px);
+    line-height: 1.4;
 
     span {
         color: #00cbb8;
@@ -28,135 +35,148 @@
 .subheading {
     color: #696984;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 180%;
-    letter-spacing: 0;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    font-size: clamp(16px, 3vw, 24px);
+    line-height: 1.6;
+    margin-top: 10px;
 }
 
 .features {
+    width: 100%;
     max-width: 1580px;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 160px;
+    gap: 80px;
+
+    @media (min-width: 992px) {
+        gap: 160px;
+    }
 }
 
 .featureRow {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 80px;
+        text-align: left;
+    }
 }
 
 .reverse {
-    grid-template-columns: 1fr 1.1fr;
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1.1fr;
 
-    .media {
-        order: 2;
-    }
+        .media {
+            order: 2;
+        }
 
-    .content {
-        order: 1;
+        .content {
+            order: 1;
+        }
     }
 }
 
 .media {
-    position: relative;
+    width: 100%;
+    max-width: 600px;
+
+    @media (min-width: 1024px) {
+        max-width: none;
+    }
 
     img {
         width: 100%;
+        height: auto;
         max-height: 611px;
+        object-fit: contain;
         display: block;
+        border-radius: 20px;
     }
 }
 
 .content {
+    width: 100%;
     max-width: 542px;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        text-align: left;
+    }
 
     h3 {
         color: #2F327D;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         font-weight: 600;
-        font-size: 40px;
-        line-height: 160%;
-        letter-spacing: 0%;
+        font-size: clamp(24px, 4vw, 40px);
+        line-height: 1.3;
+
+        @media (min-width: 1024px) {
+            margin-bottom: 50px;
+        }
 
         span {
             color: #00cbb8;
         }
-
     }
 
-    p {
+    p, li {
         color: #696984;
         font-weight: 400;
-        font-size: 22px;
-        line-height: 180%;
-        letter-spacing: 2px;
+        font-size: clamp(16px, 2vw, 22px);
+        line-height: 1.6;
+        letter-spacing: 0.5px;
+
+        @media (min-width: 1024px) {
+            line-height: 180%;
+            letter-spacing: 2px;
+        }
     }
 
     ul {
-        padding-left: 18px;
+        padding: 0;
+        list-style: none;
         display: flex;
         flex-direction: column;
         gap: 14px;
+        align-items: center;
 
-        li {
-            color: #696984;
-            font-weight: 400;
-            font-size: 22px;
-            line-height: 180%;
-            letter-spacing: 2px;
-            list-style-type: none;
+        @media (min-width: 1024px) {
+            padding-left: 20px;
+            align-items: flex-start;
+            
+            li {
+                position: relative;
+                list-style-type: disc;
+            }
         }
     }
 }
 
 .cta {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+
     button {
         background: transparent;
         color: #00cbb8;
         border: 1px solid #00cbb8;
-        padding: 14px 32px;
+        padding: 14px 40px;
         border-radius: 999px;
-        font-size: 15px;
+        font-size: 16px;
+        font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
 
         &:hover {
             background: #00cbb8;
-            color: #000;
+            color: #ffffff;
+            transform: translateY(-2px);
         }
-    }
-}
-
-@media (max-width: 1024px) {
-
-    .featureRow,
-    .reverse {
-        grid-template-columns: 1fr;
-        gap: 48px;
-
-        .media,
-        .content {
-            order: unset;
-            text-align: center;
-        }
-    }
-
-    .content {
-        max-width: 100%;
-    }
-
-    .heading {
-        font-size: 36px;
     }
 }

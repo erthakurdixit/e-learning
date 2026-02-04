@@ -1,15 +1,24 @@
 .ourSuccess {
-  margin: 130px 196px;
+  margin: 60px 20px;
   display: flex;
   flex-direction: column;
-  gap: 95px;
+  gap: 40px;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 992px) {
+    margin: 130px 10%;
+    gap: 95px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 130px 196px;
+  }
 }
 
 .header {
-  width: 750px;
-  height: 136px;
+  width: 100%;
+  max-width: 750px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -19,52 +28,91 @@
   h2 {
     font-family: "Buenos Aires Trial", sans-serif;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 32px;
     line-height: 130%;
     color: #010514;
     margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+    }
   }
 
   p {
     font-family: "Buenos Aires Trial", sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 160%;
     color: #010514;
     opacity: 0.85;
     margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
   }
 }
 
 .stats {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 95px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 95px;
+  }
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   text-align: center;
+  flex: 1 1 150px; // Allows items to grow and wrap
+
+  @media (min-width: 768px) {
+    gap: 8px;
+  }
 }
 
 .value {
   font-family: "Buenos Aires Trial", sans-serif;
   font-weight: 300;
-  font-size: 96px;
+  font-size: 48px;
   line-height: 100%;
-
   background: linear-gradient(90deg, #136cb5 0%, #49bbbd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (min-width: 768px) {
+    font-size: 72px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 96px;
+  }
 }
 
 .label {
   font-family: "Buenos Aires Trial", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 18px;
   line-height: 130%;
   color: rgba(1, 5, 20, 0.8);
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 32px;
+  }
 }

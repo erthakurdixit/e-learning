@@ -1,197 +1,264 @@
+@use "../../../styles/variables.scss" as *;
+
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
     font-family: "Nunito Sans", sans-serif;
-    max-width: 1519px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 100px auto;
+        gap: 60px;
+    }
+}
+
+.left {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        text-align: left;
+    }
 }
 
 .header {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     align-items: center;
-}
+    justify-content: center;
 
-.left {
-    max-width: 520px;
+    @media (min-width: 1024px) {
+        justify-content: flex-start;
+        gap: 30px;
+    }
 }
 
 .line {
-    display: flex;
-    width: 80px;
-    opacity: 1;
+    display: block;
+    width: 40px;
     border: 1px solid #525596;
     height: 0;
-    transform: translateY(50%);
+
+    @media (min-width: 1024px) {
+        width: 80px;
+    }
 }
 
-
 .label {
-
     font-weight: 400;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 20px;
+    font-size: 14px;
+    letter-spacing: 10px;
     color: #525596;
+
+    @media (min-width: 1024px) {
+        font-size: 20px;
+        letter-spacing: 20px;
+    }
 }
 
 .title {
     font-weight: 700;
-    font-size: 60px;
-    line-height: 100%;
-    letter-spacing: 0%;
+    font-size: clamp(30px, 6vw, 60px);
+    line-height: 1.2;
     color: #2F327D;
+    margin: 15px 0;
 }
 
 .description {
     font-family: Poppins, sans-serif;
     font-weight: 400;
-    font-size: 26px;
-    line-height: 160%;
-    letter-spacing: 2%;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: 1.6;
     color: #696984;
+    margin-bottom: 20px;
 }
 
 .cta {
     background-color: transparent;
-    margin-top: 30px;
-    padding: 0 0 0 38px;
+    padding: 0 0 0 25px;
     border-radius: 80px;
     border: 1px solid #49BBBD;
     color: #49BBBD;
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #49BBBD;
+        color: white;
+        .arrow { border-color: white; }
+    }
 }
 
 .arrow {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 1px solid #49BBBD;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 38px;
+    margin-left: 20px;
+
+    @media (min-width: 1024px) {
+        width: 70px;
+        height: 70px;
+        margin-left: 30px;
+    }
 }
 
 .right {
     position: relative;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    // Create extra bottom space on mobile so the absolute card doesn't overlap next section
+    padding-bottom: 100px; 
+
+    @media (min-width: 1024px) {
+        padding-bottom: 0;
+        align-items: flex-end;
+    }
 }
 
 .imageWrapper {
     position: relative;
-    width: 420px;
-    height: 520px;
-    border-radius: 40px;
+    width: 85%;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    border-radius: 30px;
     background: #bfe9ff;
-    right: 189px;
+
+    @media (min-width: 1024px) {
+        width: 400px;
+        margin-right: 100px; // Offset for the card overlap
+    }
 
     .quoteIcon {
         width: 100%;
         height: 100%;
         object-fit: cover;
-    }
-
-    button {
-        box-shadow: 0px 4px 60px 0px #292C7C26;
-
-        img {
-            color: #1EA4CE;
-        }
+        border-radius: 30px;
     }
 }
 
 .navButton {
     position: absolute;
-    right: -30px;
+    right: -15px;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: none;
     background: #fff;
-    font-size: 24px;
+    box-shadow: 0px 4px 20px rgba(41, 44, 124, 0.1);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+        width: 55px;
+        height: 55px;
+        right: -27px;
+    }
 }
 
 .card {
     position: absolute;
-    bottom: -80px;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
-    padding: 40px;
-    box-shadow: 2px 4px 60px 0px #292C7C1A;
-    width: 680px;
-    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 10px 40px rgba(41, 44, 124, 0.1);
+    width: 95%;
+    max-width: 550px;
+    border-radius: 15px;
+
+    @media (min-width: 1024px) {
+        width: 550px;
+        bottom: 40px;
+        left: 0;
+        transform: translateX(-40px);
+        padding: 30px;
+    }
 }
 
 .quoteBar {
     position: absolute;
-    background: linear-gradient(180deg, #F67766);
-    width: 14px;
+    background: #F67766;
+    width: 8px;
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 1;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.quote {
-    color: #5F5F7E;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 180%;
-    letter-spacing: 2%;
-
-}
-
-.verticleLine {
-    border: 1px solid #BDBDD1;
-    height: 139.01px;
-    opacity: 1;
-    border-width: 1px;
+    border-radius: 15px 0 0 15px;
 }
 
 .quoteBox {
     display: flex;
-    align-items: center;
-    gap: 32px;
-    margin-bottom: 24px;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.verticleLine {
+    border-left: 1px solid #BDBDD1;
+    height: 60px;
+    @media (min-width: 1024px) { height: 100px; }
+}
+
+.quote {
+    color: #5F5F7E;
+    font-size: clamp(14px, 1.8vw, 20px);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .name {
-    font-size: 24px;
-    line-height: 180%;
+    font-size: clamp(16px, 2vw, 22px);
     font-weight: 600;
     color: #5F5F7E;
 }
 
 .rating {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (min-width: 480px) { align-items: flex-end; }
 }
 
 .stars {
     color: #FBA333;
-    font-size: 23.98px;
-    width: 137px
+    font-size: 18px;
 }
 
 .reviews {
-    font-size: 18px;
+    font-size: 13px;
     color: #80819A;
 }
