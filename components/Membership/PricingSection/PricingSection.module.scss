@@ -33,7 +33,7 @@ $dark-text: #111827;
     gap: 32px;
     align-items: baseline;
     justify-items: center;
-    padding: 0 120px;
+    padding: 0 6%;
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);

@@ -2,7 +2,6 @@
 import React from 'react';
 import styles from "./LandingPageBanner.module.scss"
 import BannerMessageSection from '../BannerMessageSection/BannerMessageSection';
-import BannerNotificationSection from '../BannerNotificationSection/BannerNotificationSection';
 import girlImage from "@/assets/images/landing-page/girlImage.jpg";
 import notifications from "@/assets/images/landing-page/notifications.png";
 import Image from 'next/image';
@@ -15,7 +14,6 @@ const LandingPageBanner = () => {
                 <BannerMessageSection />
                 <div>
                 <Image src={notifications} alt="notifications" width={911} height={577} />
-
                 </div>
             </div>
             <Image src={girlImage} alt="girl image" className={styles.girlImage} />

@@ -4,36 +4,79 @@
 .landingPageBanner {
   position: relative;
   width: 100%;
-  aspect-ratio: 1912 / 1118;
   background: #49BBBD;
   overflow: hidden;
-  clip-path: ellipse(95% 100% at 50% 0%);
-  max-height: 1100px;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  min-height: 100vh; 
 
-  .overlay {
-    position: relative;
-    z-index: 2;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 240px 120px;
-    display: flex;
-    justify-content: space-between;
+  @media (min-width: 992px) {
+    aspect-ratio: 1912 / 1118;
+    clip-path: ellipse(95% 100% at 50% 0%);
+    max-height: 1100px;
+    min-height: auto;
   }
 
   .landingBannerContainer {
     max-width: 1920px;
     position: relative;
     margin: 0 auto;
+    height: 100%;
+  }
 
+  .overlay {
+    position: relative;
+    z-index: 2;
+    padding: 100px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 240px 6%;
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    & > div:last-child {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 30px;
+
+      @media (min-width: 992px) {
+        max-width: 911px;
+        margin-top: 0;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
   }
 
   .girlImage {
-    position: absolute;
-    top: 224px;
-    right: 280px;
-    width: 544px;
-    height: 892px;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
     z-index: 1;
-    object-fit: cover;
+
+    @media (min-width: 992px) {
+      position: absolute;
+      top: 224px;
+      right: 5%;
+      width: 28%;
+      max-width: 544px;
+    }
+
+    @media (min-width: 1600px) {
+      right: 280px;
+    }
   }
 }

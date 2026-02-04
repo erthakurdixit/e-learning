@@ -9,7 +9,7 @@
 .container {
     @include flex-center;
     justify-content: space-between;
-    padding: 30px 120px;
+    padding: 30px 6%;
     max-width: 1920px;
     margin: 0 auto
 }
