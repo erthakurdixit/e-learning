@@ -23,8 +23,9 @@ $font-family: 'Poppins', sans-serif;
 
   @media (max-width: 992px) {
     flex-direction: column-reverse;
-    gap: 50px;
+    gap: 40px;
     text-align: center;
+    padding: 40px 20px;
   }
 }
 
@@ -48,6 +49,10 @@ $font-family: 'Poppins', sans-serif;
   line-height: 100%;
   letter-spacing: 0%;
 
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
   .categoryLink {
     color: $color-accent;
     text-decoration: none;
@@ -64,12 +69,16 @@ $font-family: 'Poppins', sans-serif;
   margin-bottom: 30px;
   font-weight: 600;
   font-size: 44px;
-  line-height: 100%;
+  line-height: 1.2;
   letter-spacing: 0%;
   max-width: 670px;
 
+  @media (max-width: 1200px) {
+    font-size: 36px;
+  }
+
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 28px;
   }
 }
 
@@ -80,6 +89,14 @@ $font-family: 'Poppins', sans-serif;
   font-size: 24px;
   line-height: 180%;
   letter-spacing: 2%;
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .ctaButton {
@@ -96,6 +113,11 @@ $font-family: 'Poppins', sans-serif;
   line-height: 100%;
   letter-spacing: 0%;
 
+  @media (max-width: 768px) {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+
   &:hover {
     background-color: darken($color-accent, 5%);
     transform: translateY(-2px);
@@ -106,14 +128,29 @@ $font-family: 'Poppins', sans-serif;
   flex: 1.1;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 
   @media (max-width: 992px) {
     justify-content: center;
-    width: 100%;
+    margin-bottom: 20px;
   }
 
   .heroImage {
-    height: auto;
     border-radius: 20px;
+    width: 100%;
+    height: auto;
+    max-width: 700px; 
+
+    @media (max-width: 1200px) {
+        max-width: 500px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 400px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 280px; 
+    }
   }
 }

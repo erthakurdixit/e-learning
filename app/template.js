@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 export default function Template({ children }) {
     const pathname = usePathname()
     const nonWhiteHeaderPaths = ["/", "meeting"]
+    const withoutHeaderFooterRoutes = ["/login", "/register"]
     return (
         <>
-            {!nonWhiteHeaderPaths.includes(pathname) && <Header bgColor="white" user={true}  />}
+            {!withoutHeaderFooterRoutes.includes(pathname) && !nonWhiteHeaderPaths.includes(pathname) && <Header bgColor="white" user={true} />}
             {children}
-            <Footer />
+            {!withoutHeaderFooterRoutes.includes(pathname) && < Footer />}
         </>
     );
 }

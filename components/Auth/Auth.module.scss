@@ -1,7 +1,8 @@
 @use '../../styles/variables.scss';
+
 $teal-accent: #49BBBD;
 $dark-blue-bg: #252641;
-$text-dark: #333333;
+$text-dark: #000000;
 $text-grey: #696984;
 $input-border: #BDBDD3;
 $white: #ffffff;
@@ -12,12 +13,17 @@ $font-family: 'Poppins', sans-serif;
 .authContainer {
   margin: 0 auto;
   text-align: center;
+  font-family: $font-family;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
 
   .headerSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 329px;
+    width: 100%;
+    max-width: 329px;
     margin: 0 auto;
   }
 }
@@ -25,72 +31,79 @@ $font-family: 'Poppins', sans-serif;
 .title {
   width: 100%;
   color: $text-dark;
-  margin: 0;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 1;
 }
 
 .toggleContainer {
   width: 100%;
   display: flex;
-  max-width: 329px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba($teal-accent, 0.2);
+  background: rgba(73, 187, 189, 0.6);
   border-radius: $border-radius-pill;
-  padding: 5px;
-  margin-bottom: 52px;
+  padding: 8px 10px;
+  margin-bottom: 30px;
   position: relative;
+
+  @media (min-width: 768px) {
+    margin-bottom: 52px;
+  }
 }
 
 .toggleBtn {
   flex: 1;
   border: none;
   background: transparent;
-  padding: 12px;
   border-radius: $border-radius-pill;
-  font-size: 1rem;
-  font-weight: 500;
-  color: $text-grey;
+  color: $white;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 2;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 0;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 
   &.active {
     background-color: $teal-accent;
     color: $white;
-    box-shadow: 0 2px 10px rgba($teal-accent, 0.3);
   }
 }
 
 .description {
-  color: $text-grey;
-  font-size: 0.95rem;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 1.5;
-  margin-bottom: 42px;
+  color: #5B5B5B;
+  margin-bottom: 30px;
   text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 42px;
+  }
 }
 
 .form {
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 25px;
+  }
 }
 
 .inputGroup {
   label {
     display: block;
     color: $text-dark;
-    margin-bottom: 12px;
-    font-weight: 400;
+    margin-bottom: 10px;
     font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-
   }
 
   .inputWrapper {
@@ -98,29 +111,32 @@ $font-family: 'Poppins', sans-serif;
   }
 
   input {
-    width: calc(100% - 50px);
-    padding: 15px 25px;
+    width: 100%;
+    padding: 12px 20px;
     border-radius: $border-radius-pill;
-    font-size: 0.95rem;
+    font-size: 14px;
     outline: none;
-    transition: border-color 0.3s;
-
     border: 1px solid #49BBBD;
-    &:focus {
-      border-color: $teal-accent;
+
+    @media (min-width: 768px) {
+      padding: 15px 25px;
+      font-size: 16px;
+    }
+
+    &::placeholder {
+      color: #ACACAC;
     }
   }
 
   .eyeToggle {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     color: $text-grey;
     cursor: pointer;
-    font-size: 1.2rem;
     display: flex;
   }
 }
@@ -129,9 +145,12 @@ $font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 13px;
   color: $text-grey;
-  margin-top: -10px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 
   .checkboxLabel {
     display: flex;
@@ -151,21 +170,34 @@ $font-family: 'Poppins', sans-serif;
 }
 
 .submitBtn {
-  margin-top: 20px;
+  align-self: flex-end; 
   width: 100%;
-  padding: 15px;
+  max-width: 232px;
+  padding: 12px;
   background-color: $teal-accent;
   color: $white;
   border: none;
   border-radius: $border-radius-pill;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba($teal-accent, 0.4);
-  transition: transform 0.2s, opacity 0.2s;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+
+  @media (min-width: 768px) {
+    padding: 15px;
+    margin-top: 20px;
+  }
 
   &:hover {
     opacity: 0.9;
-    transform: translateY(-2px);
+  }
+}
+
+.imageSide {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
   }
 }

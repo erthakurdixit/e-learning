@@ -36,10 +36,10 @@ const CourseDetails = () => {
                         <div className={styles.infoList}>
                             <h4>This Course included</h4>
                             <ul>
-                                <li><span><Image src ={sun} width={23} height={23}/></span> Money Back Guarantee</li>
-                                <li><span><Image src ={sun} width={23} height={23}/></span> Access on all devices</li>
-                                <li><span><Image src ={sun} width={23} height={23}/></span> Certification of completion</li>
-                                <li><span><Image src ={sun} width={23} height={23}/></span> 32 Moduls</li>
+                                <li><span><Image alt={"sun"}  src ={sun} width={23} height={23}/></span> Money Back Guarantee</li>
+                                <li><span><Image alt={"sun"} src ={sun} width={23} height={23}/></span> Access on all devices</li>
+                                <li><span><Image alt={"sun"} src ={sun} width={23} height={23}/></span> Certification of completion</li>
+                                <li><span><Image alt={"sun"} src ={sun} width={23} height={23}/></span> 32 Moduls</li>
                             </ul>
                         </div>
 
@@ -51,7 +51,7 @@ const CourseDetails = () => {
                         <div className={styles.shareSection}>
                             <h4>Share this course</h4>
                             <div className={styles.socialIcons}>
-                                <Image src={twitter} width={32} height={32}/><Image src={twitter} width={32} height={32}/><Image src={twitter} width={32} height={32}/><Image src={twitter} width={32} height={32}/>
+                                <Image alt={"social"} src={twitter} width={32} height={32}/><Image alt={"social"}  src={twitter} width={32} height={32}/><Image alt={"social"} src={twitter} width={32} height={32}/><Image alt={"social"} src={twitter} width={32} height={32}/>
                             </div>
                         </div>
                     </div>

@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import InputGroup from './InputGroup';
 import styles from './Auth.module.scss';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const AuthForm = ({ initialView = 'login' }) => {
   const [view, setView] = useState(initialView);
   const isRegister = view === 'register';
-
+  const router = useRouter()
   return (
     <div className={styles.authContainer}>
       <div className={styles.headerSection}>
@@ -15,13 +16,13 @@ const AuthForm = ({ initialView = 'login' }) => {
       <div className={styles.toggleContainer}>
         <button 
           className={`${styles.toggleBtn} ${!isRegister ? styles.active : ''}`}
-          onClick={() => setView('login')}
+          onClick={() => router.push("/login")}
         >
           Login
         </button>
         <button 
           className={`${styles.toggleBtn} ${isRegister ? styles.active : ''}`}
-          onClick={() => setView('register')}
+          onClick={() => router.push("/register")}
         >
           Register
         </button>
