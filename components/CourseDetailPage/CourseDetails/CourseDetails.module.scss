@@ -21,29 +21,53 @@
     width: 60%;
     justify-content: space-between;
 
-    .tab {
+    @media (max-width: 1200px) {
+        width: 100%;
+        gap: 12px;
+    }
 
+    @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .tab {
         padding: 17px 50px;
         border: none;
         background-color: #0000001A;
         backdrop-filter: blur(5px);
         cursor: pointer;
-        width: 200;
-        height: 63;
-        opacity: 1;
+        min-width: 200px;
+        height: 63px;
         border-radius: 12px;
         font-weight: 700;
         font-size: 20px;
-        line-height: 100%;
-        letter-spacing: 0%;
+        line-height: 1;
         color: #00000066;
+        text-align: center;
+
+        @media (max-width: 1200px) {
+            padding: 15px 30px;
+            min-width: 180px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 320px;
+            height: 56px;
+            font-size: 16px;
+        }
 
         &.active {
             background: #4db6ac;
-            color: white;
+            color: #ffffff;
         }
     }
 }
+
 
 .pricingCard {
     position: absolute;
@@ -54,7 +78,11 @@
     border-radius: 20px;
     overflow: hidden;
     z-index: 10;
-    border: 30px solid #FFFFFF
+    border: 30px solid #FFFFFF;
+
+    @media (max-width: 1600px) {
+        display: none;
+    }
 }
 
 .videoThumbnail {

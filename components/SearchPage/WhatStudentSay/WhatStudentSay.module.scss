@@ -1,11 +1,9 @@
+
 $bg-light: #eef5fa;
 $bg-white: #ffffff;
-$text-dark: #1a1a1a;
-$text-secondary: #2d3748;
-$text-muted: #4a5568;
+$text-dark: #252641;
 $text-light: #696984;
-$accent-teal: #62c1cf;
-$border-light: #edf2f7;
+$accent-teal: #49BBBD;
 
 .container {
   display: flex;
@@ -13,26 +11,28 @@ $border-light: #edf2f7;
   justify-content: center;
   align-items: center;
   background-color: $bg-light;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 0 6%;
-  max-width: 1920px;
-
+  width: 100%;
 }
 
 .heading {
   width: 100%;
+  text-align: left;
 
   h1 {
-    margin: 70px 0;
+    margin: 40px 0;
     color: $text-dark;
-    width: 100%;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 100%;
-    letter-spacing: 2%;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      margin: 30px 0;
+      text-align: center;
+    }
   }
-
-
 }
 
 .card {
@@ -40,103 +40,49 @@ $border-light: #edf2f7;
   border-radius: 40px;
   width: 100%;
   display: flex;
+  flex-direction: row;
   position: relative;
-  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  padding: 80px 61px 34px 106px;
-  gap: 113px;
+  padding: 60px;
+  gap: 40px;
   align-items: center;
-  transition: all 0.3s ease;
   margin-bottom: 80px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     padding: 40px;
+    gap: 30px;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     text-align: center;
-    padding: 30px;
-  }
-
-  @media (max-width: 480px) {
-    border-radius: 20px;
+    padding: 40px 20px;
   }
 }
 
 .imageSection {
-  position: relative;
   flex-shrink: 0;
-  width: 380px;
-  height: 380px;
+  width: 100%;
+  max-width: 450px;
   display: flex;
-  align-items: center;
   justify-content: center;
 
-  @media (max-width: 1024px) {
-    width: 300px;
-    height: 300px;
-  }
-
-  @media (max-width: 850px) {
-    margin-bottom: 20px;
-  }
-
-  @media (max-width: 480px) {
-    width: 240px;
-    height: 240px;
-  }
-
   .mainImageWrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
     overflow: hidden;
-    z-index: 2;
-
-    @media (max-width: 1024px) {
-      width: 260px;
-      height: 260px;
-    }
-
-    @media (max-width: 480px) {
-      width: 200px;
-      height: 200px;
-    }
 
     .mainImage {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
+      display: block;
     }
   }
 
-  .decorator {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 0.7;
-
-    &.dec1 {
-      width: 80px;
-      height: 80px;
-      background: #f4ffb0;
-      top: 10px;
-      right: 20px;
-    }
-
-    &.dec2 {
-      width: 120px;
-      height: 120px;
-      background: #c1f7e5;
-      bottom: -10px;
-      left: -20px;
-    }
-
-    &.dec3 {
-      width: 90px;
-      height: 90px;
-      background: #fed8b1;
-      bottom: 20px;
-      right: -10px;
-    }
+  @media (max-width: 480px) {
+    max-width: 300px;
   }
 }
 
@@ -144,48 +90,50 @@ $border-light: #edf2f7;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: left;
 
-  @media (max-width: 850px) {
+  @media (max-width: 1024px) {
     align-items: center;
+    text-align: center;
   }
 
   .name {
-    margin: 0 0 31px 0;
-    color: #252641;
+    margin: 0 0 10px 0;
+    color: $text-dark;
     font-weight: 700;
     font-size: 30px;
 
     @media (max-width: 480px) {
-      font-size: 22px;
+      font-size: 24px;
     }
   }
 
   .email {
-    color: #252641;
-    margin: 0 0 19px 0;
-    font-weight: 500;
-    font-size: 24px;
-
-    @media (max-width: 480px) {
-      font-size: 16px;
-    }
+    color: $text-dark;
+    margin: 0 0 25px 0;
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.8;
   }
 
   .testimonialText {
     color: $text-light;
-    margin: 0;
-    margin-bottom: 30px;
-    max-width: 500px;
+    margin: 0 0 30px 0;
     font-weight: 400;
     font-size: 18px;
-    text-align: left;
-    line-height: 180%;
-    letter-spacing: 2%;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 20px;
+    border-left: 4px solid $accent-teal;
 
-    @media (max-width: 850px) {
-      margin-left: auto;
-      margin-right: auto;
+    @media (max-width: 1024px) {
+      padding-left: 0;
+      border-left: none;
+      max-width: 600px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 16px;
     }
   }
 
@@ -194,20 +142,19 @@ $border-light: #edf2f7;
     gap: 15px;
 
     .socialIcon {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       background: $accent-teal;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: $bg-white;
-      text-decoration: none;
-      font-size: 14px;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
 
       &:hover {
-        transform: scale(1.1);
+        transform: translateY(-3px);
+        filter: brightness(1.1);
       }
     }
   }
@@ -216,32 +163,44 @@ $border-light: #edf2f7;
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
   padding-left: 20px;
+  border-left: 1px solid rgba(0,0,0,0.1);
 
-  @media (max-width: 850px) {
+  @media (max-width: 1024px) {
     flex-direction: row;
     border-left: none;
     padding-left: 0;
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
   }
 
   .thumbBtn {
-    border: none;
+    border: 3px solid transparent;
     background: #D9D9D9;
-    border-radius: 50%;
+    border-radius: 12px;
     cursor: pointer;
     overflow: hidden;
+    width: 70px;
+    height: 70px;
     padding: 0;
-    transition: border-color 0.2s ease;
+    transition: all 0.3s ease;
 
     &.active {
-      border-color: $text-secondary;
+      border-color: $accent-teal;
+      transform: scale(1.05);
     }
 
     .thumbImg {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: 480px) {
+      width: 55px;
+      height: 55px;
     }
   }
 }
