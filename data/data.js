@@ -1,0 +1,27 @@
+export const HomePageData = [
+    {
+        title:"",
+        desc:"",
+        button:"",
+    },
+    {
+        title:"",
+        desc:"",
+        button:"",
+    },
+    {
+        title:"",
+        desc:"",
+        button:"",
+    },
+    {
+        title:"",
+        desc:"",
+        button:"",
+    },
+    {
+        title:"",
+        desc:"",
+        button:"",
+    },
+]

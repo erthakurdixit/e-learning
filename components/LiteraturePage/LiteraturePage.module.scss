@@ -1,0 +1,260 @@
+:root {
+    --primary: #4dbfbf;
+    --text-dark: #333;
+    --text-light: #666;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius: 20px;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 6%;
+    font-family: Poppins, sans-serif;
+    color: var(--text-dark);
+}
+
+.profileHeader {
+    position: relative;
+    background: url("/images/literatureBackImage.jpg") center / cover;
+    border-radius: var(--radius);
+    padding: 40px;
+    display: flex;
+    gap: 46px;
+    box-shadow: var(--card-shadow);
+}
+
+.avatarWrapper {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #fff;
+}
+
+.profileOverlay {
+    background: #FFFFFFCC;
+    border-radius: var(--radius);
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+.profileInfo h1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    margin-bottom: 7px;
+
+    button {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        padding: 16px 27px;
+    }
+}
+
+.subTitle {
+    color: #2D3436B2;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-family: Inter, sans-serif;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+
+}
+
+.statsBar {
+    display: flex;
+    gap: 150px;
+    margin-left: 32px;
+    font-size: 0.85rem;
+    color: #2D3436CC;
+
+    span {
+        font-family: Inter, sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 32px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+    }
+}
+
+.enrollBtn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Tabs */
+
+.tabsContainer {
+    display: flex;
+    gap: 25px;
+    margin: 68px 0;
+}
+
+.tab {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    background: #BBBBBB80;
+    color: #696969;
+    border: none;
+    padding: 16px 27px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.activeTab {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* Grid */
+
+.gridTitle {
+    margin-bottom: 49px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+}
+
+.bookGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px 2px #00000040;
+    align-items: center;
+
+    img {
+        margin-bottom: 25px;
+    }
+}
+
+.bookCover {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.cardFooter {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    width: 100%;
+}
+
+.benefitText {
+    color: #000000CC;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 2%;
+}
+
+.price {
+    color: #49BBBDCC;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 2%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 52px;
+}
+
+.pageBtn {
+    width: 70px;
+    height: 70px;
+    border: none;
+    background: #e6f2f2;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    &:first-child {
+        background: #49BBBD33;
+        color: var(--primary);
+        font-weight: 800;
+    }
+     &:last-child {
+        background: #49BBBD33;
+        color: var(--primary);
+        font-weight: 800;
+    }
+}
+
+.activePage {
+    background: var(--primary);
+    color: #fff;
+}
+
+
+@media (max-width: 992px) {
+    .bookGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .bookGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .profileHeader {
+        flex-direction: column;
+    }
+}

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function Template({ children }) {
     const pathname = usePathname()
     const nonWhiteHeaderPaths = ["/", "meeting"]
-    const withoutHeaderFooterRoutes = ["/login", "/register"]
+    const withoutHeaderFooterRoutes = ["/login", "/register", "/course-calender"]
     return (
         <>
             {!withoutHeaderFooterRoutes.includes(pathname) && !nonWhiteHeaderPaths.includes(pathname) && <Header bgColor="white" user={true} />}

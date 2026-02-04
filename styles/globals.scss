@@ -1,14 +1,58 @@
+@use './mixins.scss' as *;
 @use "./variables" as *;
+@use './courseAccordian.scss' as *;
+@use './courseCalender.scss' as *;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #49bbbd;
+  --secondary: #49bbbd99;
+  --tertiary: #3a7b7c90;
+  --light-gray: #5b5b5b;
+  --color-gray: #696984;
+  --color-blue: #30327e;
+  --color-green: #00cbb7;
+  --color-parrot-green: #33efa0;
+  --primary-teal: #3AB4B7;
+  --primary-teal-dark: #2c9ea1;
+  --bg-light: #F0F6FF;
+  --white: #FFFFFF;
+  --text-dark: #2D3748;
+  --text-muted: #696984;
+  --border-color: #E2E8F0;
+  --sidebar-width: 350px;
+  --orange-pastel: #F48C064D;
+  --blue-pastel: #D6EAFF;
+  --pink-pastel: #F8D7DA;
+  --danger-pastel: #EE645B4D;
+  font-family: var(--font-poppins);
+  --accordion-card-height: 295px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 body {
+  box-sizing: border-box;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins);
   margin: 0;
-  font-family: $font-primary;
-  background: $color-white;
-}
+  padding: 0;
 
+  a {
+    text-decoration: none;
+  }
+}
